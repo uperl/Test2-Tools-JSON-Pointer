@@ -31,9 +31,9 @@ Compare parts of JSON string to data structure using JSON pointers VERSION
 
 This module provides a comparison for a JSON string with a JSON pointer.  This
 module was inspired by [Test::Mojo](https://metacpan.org/pod/Test::Mojo), which provides a mechanism for checking
-the JSON response from a HTTP header.  This module provides a generic way to
-write tests for JSON using a JSON pointer with or without the context of an
-HTTP header.  It also has a [Test2::Suite](https://metacpan.org/pod/Test2::Suite) style interface.
+the JSON response from a HTTP body.  This module provides a generic way to
+write tests for JSON using a JSON pointer with or without the context of 
+[Mojolicious](https://metacpan.org/pod/Mojolicious) or [HTTP](https://metacpan.org/pod/HTTP).  It also has a [Test2::Suite](https://metacpan.org/pod/Test2::Suite) style interface.
 
 This module expects a Perl string in Perl's internal representation (utf-8),
 NOT raw encoded bytes.  Thus if you are reading files they need to be read
