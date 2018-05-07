@@ -4,6 +4,7 @@ Compare parts of JSON string to data structure using JSON pointers VERSION
 
 # SYNOPSIS
 
+    use utf8;
     use Test2::V0;
     use Test2::Tools::JSON::Pointer;
     

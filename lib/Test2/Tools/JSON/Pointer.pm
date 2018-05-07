@@ -15,6 +15,7 @@ our @EXPORT = qw( json );
 
 =head1 SYNOPSIS
 
+ use utf8;
  use Test2::V0;
  use Test2::Tools::JSON::Pointer;
  
