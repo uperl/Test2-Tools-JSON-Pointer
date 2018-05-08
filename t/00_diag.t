@@ -17,6 +17,7 @@ $modules{$_} = $_ for qw(
   JSON::Pointer
   JSON::XS
   Test2::Compare::Base
+  Test2::Require::Module
   Test2::Util::HashBase
   Test2::Util::Table
   Test2::V0

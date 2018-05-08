@@ -82,8 +82,26 @@ sub verify
   my($got, $exists) = @params{'got','exists'};
 
   return 0 unless $exists;
-  return 0 unless ref($got) eq '';
   return 1;
+}
+
+sub _convert_got
+{
+  my(undef, $got) = @_;
+
+  if(ref $got)
+  {
+    if(eval { $got->isa('Path::Tiny') })
+    {
+      return $got->slurp_raw;
+    }
+    elsif(eval { $got->isa('Path::Class::File') })
+    {
+      return $got->slurp(iomode => '<:unix');
+    }
+  }
+
+  return Encode::encode("UTF-8", $got);
 }
 
 sub deltas
@@ -94,7 +112,7 @@ sub deltas
   my $check = $convert->($self->{+INPUT});
 
   my $got_root_ref = eval {
-    $self->{+JSON}->decode(Encode::encode("UTF-8", $got));
+    $self->{+JSON}->decode($self->_convert_got($got));
   };
 
   my $pointer = $self->{+POINTER};

@@ -24,7 +24,21 @@ Compare parts of JSON string to data structure using JSON pointers VERSION
         field 'x' => 'y';
       },
     );
-    
+
+    done_testing;
+
+with files:
+
+    use Test2::V0;
+    use Test2::Tools::JSON::Pointer;
+    use Path::Tiny qw( path );
+
+    is(
+      # will also work with Path::Class::File
+      path('myjsonfile.json'),
+      json '/a' => [1,2,3],
+    );
+
     done_testing;
 
 # DESCRIPTION
@@ -45,17 +59,20 @@ of a [HTTP::Response](https://metacpan.org/pod/HTTP::Response) object you want t
 ## json
 
     is(
-      $json_string,
+      $json,
       json($pointer, $check)
     );
+
     is(
-      $json_string,
+      $json,
       json($check),
     );
 
-Compare the `$json_string` to the given [Test2::Suite](https://metacpan.org/pod/Test2::Suite) `$check` after
+Compare `$json` to the given [Test2::Suite](https://metacpan.org/pod/Test2::Suite) `$check` after
 decoding the string into a deep reference (array or hash) and starting
-at the position of the given `$pointer`.
+at the position of the given `$pointer`.  If `$json` is an instance
+of [Path::Tiny](https://metacpan.org/pod/Path::Tiny) or [Path::Class::File](https://metacpan.org/pod/Path::Class::File), then it will read from that
+file first to get the JSON.
 
 # SEE ALSO
 

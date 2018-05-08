@@ -35,7 +35,21 @@ our @EXPORT = qw( json );
      field 'x' => 'y';
    },
  );
- 
+
+ done_testing;
+
+with files:
+
+ use Test2::V0;
+ use Test2::Tools::JSON::Pointer;
+ use Path::Tiny qw( path );
+
+ is(
+   # will also work with Path::Class::File
+   path('myjsonfile.json'),
+   json '/a' => [1,2,3],
+ );
+
  done_testing;
 
 =head1 DESCRIPTION
@@ -56,17 +70,20 @@ of a L<HTTP::Response> object you want to use C<decoded_content>.
 =head2 json
 
  is(
-   $json_string,
+   $json,
    json($pointer, $check)
  );
+
  is(
-   $json_string,
+   $json,
    json($check),
  );
 
-Compare the C<$json_string> to the given L<Test2::Suite> C<$check> after
+Compare C<$json> to the given L<Test2::Suite> C<$check> after
 decoding the string into a deep reference (array or hash) and starting
-at the position of the given C<$pointer>.
+at the position of the given C<$pointer>.  If C<$json> is an instance
+of L<Path::Tiny> or L<Path::Class::File>, then it will read from that
+file first to get the JSON.
 
 =cut
 
