@@ -35,7 +35,7 @@ our @EXPORT = qw( json );
      field 'x' => 'y';
    },
  );
-
+ 
  done_testing;
 
 with files:
@@ -43,13 +43,13 @@ with files:
  use Test2::V0;
  use Test2::Tools::JSON::Pointer;
  use Path::Tiny qw( path );
-
+ 
  is(
    # will also work with Path::Class::File
    path('myjsonfile.json'),
    json '/a' => [1,2,3],
  );
-
+ 
  done_testing;
 
 =head1 DESCRIPTION
