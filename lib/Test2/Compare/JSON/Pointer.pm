@@ -162,7 +162,7 @@ sub deltas
 
 =over 4
 
-=item L<TEst2::Tools::JSON::Pointer>
+=item L<Test2::Tools::JSON::Pointer>
 
 This is what you would use in a C<.t> file, and probably what you are interested in.
 
