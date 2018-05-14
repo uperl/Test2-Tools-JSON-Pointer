@@ -102,27 +102,21 @@ sub json ($;$)
 
 my $count = 0;
 
-sub import
+if(eval { require Test2::Tools::HTTP::Tx })
 {
-  my $self = shift;
-  $self->SUPER::import(@_);
-  
-  if(eval { require Test2::Tools::HTTP::Tx })
-  {
-    return if $count++;
-    require JSON::Pointer;
-    Test2::Tools::HTTP::Tx->add_helper(
-      'res.json' => sub {
-        my($res, $pointer) = @_;
-        my $json = JSON->new->utf8(1)->decode($res->decoded_content);
-        if($pointer)
-        {
-          $json = JSON::Pointer->get($json, $pointer);
-        }
-        return $json;
+  return if $count++;
+  require JSON::Pointer;
+  Test2::Tools::HTTP::Tx->add_helper(
+    'res.json' => sub {
+      my($res, $pointer) = @_;
+      my $json = JSON->new->utf8(1)->decode($res->decoded_content);
+      if($pointer)
+      {
+        $json = JSON::Pointer->get($json, $pointer);
       }
-    );
-  }
+      return $json;
+    }
+  );
 }
 
 1;
