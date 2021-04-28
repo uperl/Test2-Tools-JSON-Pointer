@@ -57,7 +57,7 @@ with files:
 This module provides a comparison for a JSON string with a JSON pointer.  This
 module was inspired by L<Test::Mojo>, which provides a mechanism for checking
 the JSON response from a HTTP body.  This module provides a generic way to
-write tests for JSON using a JSON pointer with or without the context of 
+write tests for JSON using a JSON pointer with or without the context of
 L<Mojolicious> or L<HTTP>.  It also has a L<Test2::Suite> style interface.
 
 This module expects a Perl string in Perl's internal representation (utf-8),
@@ -73,7 +73,7 @@ of a L<HTTP::Response> object you want to use C<decoded_content>.
    $json,
    json($pointer, $check)
  );
-
+ 
  is(
    $json,
    json($check),

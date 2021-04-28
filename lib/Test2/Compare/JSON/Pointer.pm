@@ -121,7 +121,7 @@ sub deltas
   if(my $error = "$@")
   {
     my $check = $convert->('valid json');
-  
+
     $error =~ s/ at \S+ line [0-9]+\.//;
     return $check->delta_class->new(
       verified  => undef,
