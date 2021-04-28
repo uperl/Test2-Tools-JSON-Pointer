@@ -1,45 +1,49 @@
-# Test2::Tools::JSON::Pointer [![Build Status](https://secure.travis-ci.org/plicease/Test2-Tools-JSON-Pointer.png)](http://travis-ci.org/plicease/Test2-Tools-JSON-Pointer)
+# Test2::Tools::JSON::Pointer ![linux](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/macos/badge.svg) ![windows](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/windows/badge.svg) ![cygwin](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/cygwin/badge.svg) ![msys2-mingw](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/msys2-mingw/badge.svg)
 
 Compare parts of JSON string to data structure using JSON pointers VERSION
 
 # SYNOPSIS
 
-    use utf8;
-    use Test2::V0;
-    use Test2::Tools::JSON::Pointer;
-    
-    is(
-      '{"a":"龍"}',
-      json '/a' => "龍",
-    );
-    
-    is(
-      '{"a":[1,2,3],"b":{"x":"y"}',
-      json '/a' => [1,2,3],
-    );
-    
-    is(
-      '{"a":[1,2,3],"b":{"x":"y"}',
-      json '/b' => hash {
-        field 'x' => 'y';
-      },
-    );
-    
-    done_testing;
+```perl
+use utf8;
+use Test2::V0;
+use Test2::Tools::JSON::Pointer;
+
+is(
+  '{"a":"龍"}',
+  json '/a' => "龍",
+);
+
+is(
+  '{"a":[1,2,3],"b":{"x":"y"}',
+  json '/a' => [1,2,3],
+);
+
+is(
+  '{"a":[1,2,3],"b":{"x":"y"}',
+  json '/b' => hash {
+    field 'x' => 'y';
+  },
+);
+
+done_testing;
+```
 
 with files:
 
-    use Test2::V0;
-    use Test2::Tools::JSON::Pointer;
-    use Path::Tiny qw( path );
-    
-    is(
-      # will also work with Path::Class::File
-      path('myjsonfile.json'),
-      json '/a' => [1,2,3],
-    );
-    
-    done_testing;
+```perl
+use Test2::V0;
+use Test2::Tools::JSON::Pointer;
+use Path::Tiny qw( path );
+
+is(
+  # will also work with Path::Class::File
+  path('myjsonfile.json'),
+  json '/a' => [1,2,3],
+);
+
+done_testing;
+```
 
 # DESCRIPTION
 
@@ -58,15 +62,17 @@ of a [HTTP::Response](https://metacpan.org/pod/HTTP::Response) object you want t
 
 ## json
 
-    is(
-      $json,
-      json($pointer, $check)
-    );
+```
+is(
+  $json,
+  json($pointer, $check)
+);
 
-    is(
-      $json,
-      json($check),
-    );
+is(
+  $json,
+  json($check),
+);
+```
 
 Compare `$json` to the given [Test2::Suite](https://metacpan.org/pod/Test2::Suite) `$check` after
 decoding the string into a deep reference (array or hash) and starting
