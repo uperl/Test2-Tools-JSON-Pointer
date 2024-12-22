@@ -1,4 +1,4 @@
-# Test2::Tools::JSON::Pointer ![linux](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/macos/badge.svg) ![windows](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/windows/badge.svg) ![cygwin](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/cygwin/badge.svg) ![msys2-mingw](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/msys2-mingw/badge.svg)
+# Test2::Tools::JSON::Pointer ![linux](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/macos/badge.svg) ![windows](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/windows/badge.svg) ![msys2-mingw](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/msys2-mingw/badge.svg)
 
 Compare parts of JSON string to data structure using JSON pointers VERSION
 
@@ -50,7 +50,7 @@ done_testing;
 This module provides a comparison for a JSON string with a JSON pointer.  This
 module was inspired by [Test::Mojo](https://metacpan.org/pod/Test::Mojo), which provides a mechanism for checking
 the JSON response from a HTTP body.  This module provides a generic way to
-write tests for JSON using a JSON pointer with or without the context of 
+write tests for JSON using a JSON pointer with or without the context of
 [Mojolicious](https://metacpan.org/pod/Mojolicious) or [HTTP](https://metacpan.org/pod/HTTP).  It also has a [Test2::Suite](https://metacpan.org/pod/Test2::Suite) style interface.
 
 This module expects a Perl string in Perl's internal representation (utf-8),
@@ -101,7 +101,7 @@ Graham Ollis <plicease@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2018 by Graham Ollis.
+This software is copyright (c) 2018-2024 by Graham Ollis.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

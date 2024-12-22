@@ -1,2 +1,4 @@
 /Test2-Tools-JSON-Pointer-*
 /.build
+*.old
+*.orig
