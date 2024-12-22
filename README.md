@@ -1,4 +1,4 @@
-# Test2::Tools::JSON::Pointer ![linux](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/macos/badge.svg) ![windows](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/windows/badge.svg) ![msys2-mingw](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/msys2-mingw/badge.svg)
+# Test2::Tools::JSON::Pointer ![linux](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/linux/badge.svg) ![macos](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/macos/badge.svg) ![windows](https://github.com/uperl/Test2-Tools-JSON-Pointer/workflows/windows/badge.svg)
 
 Compare parts of JSON string to data structure using JSON pointers VERSION
 

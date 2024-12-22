@@ -3,7 +3,7 @@ package Test2::Tools::JSON::Pointer;
 use strict;
 use warnings;
 use utf8;
-use 5.008001;
+use 5.014;
 use JSON::MaybeXS qw( JSON );
 use Test2::Compare::JSON::Pointer;
 use parent 'Exporter';
